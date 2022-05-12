@@ -5,6 +5,170 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fylo - data storage component</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
+    />
+    <style>
+      :root {
+        --main: hsl(228, 56%, 26%);
+        --secondary: 229, 57%, 11%;
+        --gray: hsl(229, 7%, 55%);
+        --white: hsl(243, 100%, 93%);
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 500px;
+        display: grid;
+        padding: 0 24px;
+        min-height: 100vh;
+        place-items: center;
+        background: url(images/bg-mobile.png) no-repeat top left / 100% 100%;
+      }
+      main {
+        gap: 16px;
+        display: grid;
+        grid-template-rows: 200px 160px;
+        grid-template-columns: minmax(0, 327px);
+      }
+      main > * {
+        border-radius: 10px;
+        background-color: var(--main);
+      }
+      @media (min-width: 768px) {
+        body {
+          background: url(images/bg-desktop.png) no-repeat right bottom / 100%
+            52.5% hsl(var(--secondary));
+        }
+        main {
+          gap: 30px;
+          grid-template-rows: 200px;
+          grid-template-columns: minmax(0, 350px) minmax(0, 540px);
+        }
+        .info {
+          align-self: end;
+        }
+      }
+
+      /*
+        [1] Controls
+      */
+
+      .controls {
+        gap: 25px;
+        display: grid;
+        align-content: center;
+        padding-left: 40px;
+        border-top-right-radius: 100px;
+      }
+      .controls .btns {
+        gap: 16px;
+        display: flex;
+        align-items: center;
+      }
+      .controls button {
+        width: 48px;
+        height: 48px;
+        border: none;
+        display: grid;
+        border-radius: 8px;
+        place-items: center;
+        background: hsl(var(--secondary));
+      }
+
+      /*
+        [2] Info
+      */
+
+      .info {
+        padding: 40px;
+        position: relative;
+        color: var(--white);
+        font: 400 14px/1 "Raleway", sans-serif;
+      }
+      .info .slider {
+        height: 20px;
+        padding: 2px;
+        margin: 17px 0 10px;
+        border-radius: 15px;
+        background-color: hsla(var(--secondary), 0.7);
+      }
+      .info .slider .progress {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        height: 100%;
+        padding-right: 2px;
+        border-radius: inherit;
+        width: calc((815% * 100) / 1000);
+        background-image: linear-gradient(
+          to right,
+          hsl(6, 100%, 80%),
+          hsl(335, 100%, 65%)
+        );
+      }
+      .info .slider .thumb {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #fff;
+      }
+      .info .slider + .label {
+        display: flex;
+        font-size: 12px;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .info .left {
+        width: 179px;
+        height: 72px;
+        display: grid;
+        color: var(--gray);
+        position: absolute;
+        place-items: center;
+        border-radius: 10px;
+        background-color: #fff;
+        text-transform: uppercase;
+      }
+      .info .left span {
+        margin-right: 5px;
+        font-size: 2.5rem;
+        color: hsl(var(--secondary));
+      }
+      @media (max-width: 767px) {
+        .info {
+          padding: 33px;
+        }
+        .info .left {
+          right: 50%;
+          bottom: -36px;
+          transform: translateX(50%);
+        }
+      }
+      @media (min-width: 768px) {
+        .info .left {
+          top: -47px;
+          right: 40px;
+        }
+        .info .left::before {
+          right: 0;
+          content: "";
+          bottom: -20px;
+          border-width: 15px;
+          position: absolute;
+          border-style: solid;
+          border-color: #fff #fff transparent transparent;
+        }
+      }
+    </style>
   </head>
   <body>
     <main>
