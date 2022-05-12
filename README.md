@@ -5,7 +5,7 @@ This is a solution to the [Fylo data storage component challenge on Frontend Men
 ## Links
 
 - Live Site [URL](https://mhmd-tarek-mhmd.github.io/Fylo-data-storage-component)
-- Solution [URL](https://www.frontendmentor.io/solutions/fylo-data-storage-component)
+- Solution [URL](https://www.frontendmentor.io/solutions/fylo-data-storage-component-H11jb69U9)
 
 ## Screenshots
 
